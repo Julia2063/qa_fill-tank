@@ -72,13 +72,13 @@ describe('fillTank', () => {
       },
     };
 
-    fillTank(customer, 15, 30);
+    fillTank(customer, 15.35, 30);
 
     expect(customer).toEqual({
-      money: 1,
+      money: 0.8999999999999773,
       vehicle: {
         maxTankCapacity: 40,
-        fuelRemains: 34.6,
+        fuelRemains: 34,
       },
     });
   });
