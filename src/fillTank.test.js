@@ -103,7 +103,7 @@ describe('fillTank', () => {
     });
   });
 
-  it(`rounds 'fuelPrice' to two decimal places`, () => {
+  it(`rounds 'fuelPrice' * 'amount' to two decimal places`, () => {
     const customer = {
       money: 3000,
       vehicle: {
@@ -112,13 +112,13 @@ describe('fillTank', () => {
       },
     };
 
-    fillTank(customer, 15.5567, 30);
+    fillTank(customer, 15.53, 15.23);
 
     expect(customer).toEqual({
-      money: 2533.3,
+      money: 2763.94,
       vehicle: {
         maxTankCapacity: 40,
-        fuelRemains: 38,
+        fuelRemains: 23.2,
       },
     });
   });
